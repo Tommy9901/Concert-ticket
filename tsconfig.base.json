@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@pinecone-intern-monorepo/secrets": ["libs/secrets/src/index.ts"]
+      "@pinecone-intern-monorepo/secrets": ["libs/secrets/src/index.ts"],
+      "@pinecone-intern-monorepo/shadcn": ["libs/shadcn/src/lib/ui/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
