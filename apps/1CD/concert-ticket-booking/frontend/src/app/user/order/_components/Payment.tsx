@@ -54,7 +54,7 @@ const Payment = ({ order, buyer }: PaymentProp) => {
     });
   };
   const triggerFunction = async ({ orderId }: { orderId: string }) => {
-    const queryUrl = `${process.env.LOCAL_FRONTEND_URI}/user/payment/${orderId}`;
+    const queryUrl = `${process.env.NEXT_PUBLIC_FRONTEND_URL}/user/payment/${orderId}`;
     const qrCodeData = await QRCode.toDataURL(queryUrl);
     setQrCodeUrl(qrCodeData);
   };
