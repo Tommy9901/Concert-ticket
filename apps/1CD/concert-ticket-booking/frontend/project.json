@@ -5,24 +5,24 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/apps/1CD/concert-ticket-booking/frontend"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "dist/apps/1CD/concert-ticket-booking/frontend"
-        }
-      },
-      "dependsOn": [
-        {
-          "target": "codegen:testing",
-          "params": "forward"
-        }
-      ]
-    },
+  "executor": "@nx/next:build",
+  "outputs": ["{options.outputPath}"],
+  "defaultConfiguration": "production",
+  "options": {
+    "outputPath": "dist/apps/1CD/concert-ticket-booking/frontend"
+  },
+  "configurations": {
+    "development": {
+      "outputPath": "dist/apps/1CD/concert-ticket-booking/frontend"
+    }
+  },
+  "dependsOn": [
+    {
+      "target": "codegen:prod",
+      "params": "forward"
+    }
+  ]
+},
     "serve": {
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
@@ -228,16 +228,11 @@
       }
     },
     "codegen:prod": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": ["graphql-codegen --config ./apps/1CD/concert-ticket-booking/frontend/codegen.ts"]
-      },
-      "dependsOn": [
-        {
-          "target": "get-secrets:prod"
-        }
-      ]
-    },
+  "executor": "nx:run-commands",
+  "options": {
+    "commands": ["graphql-codegen --config ./apps/1CD/concert-ticket-booking/frontend/codegen.ts"]
+  }
+},
     "codegen:dev": {
       "executor": "nx:run-commands",
       "options": {
@@ -268,9 +263,6 @@
       "dependsOn": [
         {
           "target": "clean"
-        },
-        {
-          "target": "get-secrets:prod"
         },
         {
           "target": "export-env"
