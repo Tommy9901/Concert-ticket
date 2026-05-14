@@ -21,7 +21,7 @@ const DatePicker = () => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={'outline'} className="bg-[#27272A] text-muted-foreground w-[263px] border-gray-600 flex justify-between" data-cy="date-picker-button">
+        <Button variant={'outline'} className="flex w-full min-w-0 justify-between border-gray-600 bg-[#27272A] text-muted-foreground sm:w-auto sm:min-w-[14rem]" data-cy="date-picker-button">
           <div className="flex items-center">
             <CalendarIcon className="mr-2 h-4 w-4" />
             {date ? format(date, 'PPP') : <span>Өдөр сонгох</span>}

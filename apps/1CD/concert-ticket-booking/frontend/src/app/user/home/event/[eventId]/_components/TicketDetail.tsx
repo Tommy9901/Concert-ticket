@@ -32,7 +32,7 @@ const TicketDetail = ({ event }: { event: Event }) => {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-[345px] m-auto lg:mx-0 gap-4 px-4 sm:px-6 md:px-0" data-cy="ticket-detail">
+    <div className="flex w-full max-w-full flex-col gap-4 px-4 sm:px-6 md:max-w-[345px] md:px-0 lg:mx-0 lg:max-w-[345px]" data-cy="ticket-detail">
       <h1 className="mb-2 text-sm font-light sm:mb-4 sm:text-base text-slate-300">Тоглолт үзэх өдрөө сонгоно уу.</h1>
 
       <Popover open={open} onOpenChange={setOpen}>

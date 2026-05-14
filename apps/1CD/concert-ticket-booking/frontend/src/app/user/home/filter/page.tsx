@@ -33,14 +33,14 @@ const Page = () => {
 
   return (
     <div className="bg-zinc-950" data-cy="Filter-Page">
-      <div className="xl:w-[1100px] md:w-[700px] w-[350px] mx-auto  py-12 ">
-        <div className="flex flex-wrap gap-2 mb-8">
-          <div className="relative flex items-center text-white w-[263px]">
+      <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 md:py-12 xl:px-8">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-end">
+          <div className="relative flex min-w-0 flex-1 items-center text-white sm:max-w-md">
             <Input
               data-testid="Artist-Search-Input"
               type="text"
               placeholder="Уран бүтээлчээр хайх"
-              className="w-full bg-black border-gray-600 md:w-80"
+              className="w-full border-gray-600 bg-black"
               value={artist}
               onChange={(e) => setArtist(e.target.value)}
             />

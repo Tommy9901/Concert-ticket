@@ -18,7 +18,7 @@ const OrderInfo = () => {
     getOrder();
   }, [refetchOrder]);
   return (
-    <div className="text-white lg:w-[841px]" data-cy="order-info-container">
+    <div className="w-full max-w-3xl text-white lg:max-w-[841px]" data-cy="order-info-container">
       <h1 data-cy="order-info-title" className="mb-6 text-2xl font-semibold">
         Захиалгын мэдээлэл
       </h1>
@@ -31,8 +31,8 @@ const OrderInfo = () => {
           return total + discountedPrice * soldQuantity;
         }, 0);
         return (
-          <Card className="bg-[#131313] border-none  px-8 pt-8 pb-6 mb-8" key={order?._id} data-cy={`order-card-${order?._id}`}>
-            <div className="mb-4 text-white lg:flex lg:items-center lg:justify-between sm:max-w-flex sm:max-w-flex-col ">
+          <Card className="mb-8 border-none bg-[#131313] px-4 pb-6 pt-8 sm:px-8" key={order?._id} data-cy={`order-card-${order?._id}`}>
+            <div className="mb-4 flex flex-col gap-4 text-white sm:flex-row sm:flex-wrap sm:items-start sm:justify-between">
               <div className="lg:gap-1 lg:flex">
                 <h2 data-cy={`order-id-${order?._id}`} className="text-base font-normal text-muted-foreground">
                   Захиалгын дугаар :{' '}
@@ -62,7 +62,7 @@ const OrderInfo = () => {
               const soldQuantity = Number(ticket.soldQuantity);
               return (
                 <div
-                  className="py-4 px-6 rounded-[6px] h-[52px] bg-[#131313] border-dashed border-[1px] border-muted-foreground mb-2 flex justify-between items-center"
+                  className="mb-2 flex min-h-[52px] flex-col items-stretch justify-between gap-2 rounded-[6px] border border-dashed border-muted-foreground bg-[#131313] px-4 py-3 sm:flex-row sm:items-center sm:px-6"
                   key={index}
                   data-cy={`ticket-card-${index}`}
                 >

@@ -55,13 +55,16 @@ const OrderTicketPage = () => {
 
   return (
     <div
-      className="min-h-[calc(100vh-1px)] bg-black align-center flex flex-col w-full h-screen gap-10"
+      className="flex min-h-[calc(100vh-1px)] w-full flex-col gap-6 bg-black px-4 pb-12 sm:gap-10 sm:px-6"
       style={{
         background: 'radial-gradient(32.61% 32.62% at 50% 125%, #00B7F4 0%, #0D0D0F 100%)',
       }}
       data-cy="order-ticket-page"
     >
-      <header className="flex justify-between items-center w-3/6 h-[80px]  text-white text-[16px] mx-10" data-cy="order-ticket-header">
+      <header
+        className="mx-auto flex w-full max-w-3xl items-center justify-between gap-4 py-3 text-sm text-white sm:py-4 sm:text-base"
+        data-cy="order-ticket-header"
+      >
         <Button onClick={handleUndo} className="text-white" data-cy="undo-button">
           Undo
         </Button>
@@ -71,7 +74,7 @@ const OrderTicketPage = () => {
           {currentState === 3 && 'Төлбөр төлөх'}
         </div>
       </header>
-      <div className="mt-4">
+      <div className="mt-2 w-full min-w-0 sm:mt-4">
         {currentState === 1 && <OrderDetail setQuantity={setQuantity} quantity={quantity} handleQuantityChange={handleQuantityChange} order={order} setOrder={setOrder} setState={setCurrentState} />}
         {currentState === 2 && <OrderConfirm setBuyer={setBuyer} setState={setCurrentState} order={order} />}
         {currentState === 3 && <Payment order={order} buyer={buyer} />}

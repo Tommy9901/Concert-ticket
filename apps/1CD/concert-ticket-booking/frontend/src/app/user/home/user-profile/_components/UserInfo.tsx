@@ -63,7 +63,7 @@ const UserInfo = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="xl:w-[841px] md:w-[400px] sm:w-[200px] rounded-2xl bg-[#09090B] m-auto flex flex-col border border-gray-600 py-6 px-6 sm:py-8 sm:px-12 gap-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-auto flex w-full max-w-2xl flex-col gap-6 rounded-2xl border border-gray-600 bg-[#09090B] px-6 py-6 sm:px-12 sm:py-8">
         <h1 data-cy="user-info-heading" className="mt-4 text-xl font-semibold text-white sm:mt-8 sm:text-2xl">
           Хэрэглэгчийн мэдээлэл
         </h1>

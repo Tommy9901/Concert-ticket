@@ -60,8 +60,8 @@ const OrderConfirm = ({ order, setBuyer, setState }: OrderConfirmProp) => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="flex justify-center gap-8">
-        <div className="w-full max-w-xl bg-[#09090B] p-8 rounded-2xl shadow-lg border border-gray-600">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full justify-center px-4 py-2 sm:px-6">
+        <div className="w-full max-w-xl rounded-2xl border border-gray-600 bg-[#09090B] p-6 shadow-lg sm:p-8">
           <h1 className="mb-6 text-xl font-semibold text-white sm:text-2xl">Захиалагчийн мэдээлэл</h1>
           <div className="space-y-6">
             {inputs.map((input) => (

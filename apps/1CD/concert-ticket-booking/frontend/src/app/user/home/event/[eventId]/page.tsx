@@ -35,14 +35,12 @@ const Page = () => {
           <div data-cy="Detail-Page">
             <DetailTop event={data?.getRelatedEvents?.eventDetail as Event} />
           </div>
-          <div className="py-8 m-auto lg:flex lg:justify-center max-w-7xl md:py-12 sm:px-6 lg:px-8">
-            <div className="lg:flex lg:gap-20 md:flex-row sm:max-w-flex sm:max-w-flex-col">
-              <div data-cy="Event-Detail" className="w-full md:w-3/5">
-                <EventDetail event={data?.getRelatedEvents?.eventDetail as Event} />
-              </div>
-              <div data-cy="Ticket-Detail" className="w-full md:w-2/5">
-                <TicketDetail event={data?.getRelatedEvents?.eventDetail as Event} />
-              </div>
+          <div className="mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-8 sm:px-6 md:flex-row md:items-start md:justify-center md:gap-12 md:py-12 lg:gap-20 lg:px-8">
+            <div data-cy="Event-Detail" className="w-full md:w-3/5 md:min-w-0">
+              <EventDetail event={data?.getRelatedEvents?.eventDetail as Event} />
+            </div>
+            <div data-cy="Ticket-Detail" className="w-full md:w-2/5 md:min-w-0">
+              <TicketDetail event={data?.getRelatedEvents?.eventDetail as Event} />
             </div>
           </div>
           <div data-cy="Related-Events" className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8">

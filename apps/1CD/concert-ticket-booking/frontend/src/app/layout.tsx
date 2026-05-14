@@ -12,7 +12,7 @@ export const metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en" className="bg-black">
-      <body>
+      <body className="min-h-screen overflow-x-hidden antialiased">
         <ApolloWrapper>
           <AuthProvider>
             <NuqsAdapter>

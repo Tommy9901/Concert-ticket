@@ -32,7 +32,7 @@ const Page = () => {
 
       {firstEvent && <CarouselMain event={firstEvent} />}
 
-      <div className=" py-12 xl:w-[1100px] md:w-[700px] w-[350px] mx-auto grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-8 ">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 py-10 sm:gap-8 sm:px-6 md:grid-cols-2 md:py-12 xl:grid-cols-3 xl:gap-10 xl:px-8">
         {(loading || data?.getEvents == null) && Array.from({ length: 6 }).map((_, index) => <SkeletonCard key={index} />)}
 
         {data?.getEvents?.map((event) => (

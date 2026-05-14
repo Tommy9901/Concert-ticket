@@ -9,9 +9,9 @@ export const metadata = {
 
 const Layout = ({ children }: PropsWithChildren) => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex min-h-screen w-full flex-col bg-gray-200">
       <AdminHeader />
-      <div className="flex-1 bg-gray-200">{children}</div>
+      <div className="min-h-0 flex-1 overflow-x-auto">{children}</div>
       <AdminFooter />
     </div>
   );

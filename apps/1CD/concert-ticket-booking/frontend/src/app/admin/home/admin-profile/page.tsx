@@ -60,7 +60,7 @@ const Page = () => {
       }
     }, [user,form])
   return (
-    <div className='lg:flex lg:items-center sm:max-w-flex sm:max-w-flex-col max-sm:mx-10 max-sm:my-10 md:flex' data-cy="Admin-Info-Page">
+    <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:flex-row md:items-start md:justify-center md:gap-12 md:px-8 lg:items-center" data-cy="Admin-Info-Page">
         <div className='flex flex-col gap-4 m-auto'>
             <Button className='bg-[#fff] border border-[#000] text-black hover:text-white'
             data-cy="Info-Step-Button"
@@ -72,7 +72,7 @@ const Page = () => {
         {step ===1 && <AdminInfo/>}
         {step===2 && 
         <Form {...form}>
-           <form onSubmit={form.handleSubmit(onSubmit)} className='xl:w-[841px] md:w-[400px] sm:w-[200px] m-auto flex flex-col mt-10 py-5 bg-[#fff] rounded-md'
+           <form onSubmit={form.handleSubmit(onSubmit)} className='m-auto mt-10 flex w-full max-w-2xl flex-col rounded-md bg-[#fff] px-4 py-5 sm:px-8'
            data-cy="Admin-Role-Update-Title">
             <h1 className='font-semibold text-center'>Админ эрх үүсгэх</h1>
             {input.map((admin)=>(

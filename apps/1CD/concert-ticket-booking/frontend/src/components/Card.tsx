@@ -9,15 +9,18 @@ const CardTicket = ({ event }: { event: Event }) => {
   const discountPrice = (unitPrice * (100 - discount)) / 100;
 
   return (
-    <div className="max-w-[345px] h-full border rounded overflow-hidden relative border-none" data-cy="Card-Component">
-      {discount !== 0 && <div className="absolute bg-[#EF4444] rounded-xl text-white px-2 py-1 font-bold top-[175px] left-6"> {event.products[0].ticketType[1].discount}%</div>}
-
-      <div className="w-full overflow-hidden aspect-video">
+    <div className="relative mx-auto h-full w-full max-w-md overflow-hidden rounded border border-none" data-cy="Card-Component">
+      <div className="relative aspect-video w-full overflow-hidden">
+        {discount !== 0 && (
+          <div className="absolute bottom-3 left-3 z-[1] rounded-xl bg-[#EF4444] px-2 py-1 text-xs font-bold text-white sm:text-sm">
+            {event.products[0].ticketType[1].discount}%
+          </div>
+        )}
         <Image src={event.image} width={500} height={500} alt="" className="object-contain" />
       </div>
-      <div className="w-full bg-[#18181B] h-full overflow-hidden p-6 text-[#FAFAFA] flex flex-col gap-2">
+      <div className="flex h-full w-full flex-col gap-2 overflow-hidden bg-[#18181B] p-4 text-[#FAFAFA] sm:p-6">
         <div>
-          <p className="text-xl font-normal">{event.name}</p>
+          <p className="text-lg font-normal sm:text-xl">{event.name}</p>
           {event.mainArtists.map((artist, index) => (
             <span className="text-muted-foreground text-[16px] font-light mr-2" key={index}>
               {artist.name}

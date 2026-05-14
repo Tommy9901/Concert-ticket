@@ -98,8 +98,8 @@ const Payment = ({ order, buyer }: PaymentProp) => {
 
   const totalPrice = order?.reduce((total, item) => total + item.price * item.buyQuantity, 0);
   return (
-    <div className="flex flex-col items-center gap-4 p-4 bg-[#1C1C1C] rounded-lg max-w-xs mx-auto">
-      <p className="flex justify-between text-xl text-white">
+    <div className="mx-auto flex w-full max-w-md flex-col items-center gap-4 rounded-lg bg-[#1C1C1C] p-4 sm:p-6">
+      <p className="flex w-full flex-wrap justify-between gap-2 text-lg text-white sm:text-xl">
         Нийт төлөх дүн: {totalPrice} <span>₮</span>
       </p>
       <button
@@ -124,7 +124,7 @@ const Payment = ({ order, buyer }: PaymentProp) => {
           <p data-cy="payment-qr-title" className="text-white text-2xl mb-4">
             Scan this QR code for payment:
           </p>
-          <img src={qrCodeUrl} alt="QR Code" style={{ width: '200px', height: '200px' }} />
+          <img src={qrCodeUrl} alt="QR Code" className="h-auto w-full max-w-[220px]" width={220} height={220} />
         </div>
       )}
     </div>

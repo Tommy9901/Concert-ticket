@@ -23,12 +23,12 @@ const EventDetail = ({ event }: { event: Event }) => {
   }, [event]);
 
   return (
-    <div className="flex justify-around px-5 max-w-[533px]" data-cy="Event-Detail">
+    <div className="mx-auto w-full max-w-full px-4 sm:max-w-[533px] sm:px-5" data-cy="Event-Detail">
       <div className="flex flex-col gap-6">
-        <div className="flex justify-between ">
-          <div className="flex gap-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-start sm:justify-between sm:gap-x-6 sm:gap-y-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6">
             <div className="flex items-center gap-2" data-cy="Scheduled-Days">
-              <Calendar className="w-4 h-4 text-gray-400" />
+              <Calendar className="h-4 w-4 shrink-0 text-gray-400" />
               {event?.scheduledDays.length > 1 ? (
                 <span className="flex items-center text-sm text-white lg:text-base" data-cy="Scheduled-Days-Range">
                   {dayjs(event.scheduledDays[0]).format('YYYY.MM.DD')} - {dayjs(event.scheduledDays[event.scheduledDays.length - 1]).format('MM.DD')}
@@ -42,12 +42,14 @@ const EventDetail = ({ event }: { event: Event }) => {
               )}
             </div>
             <div className="flex items-center gap-2" data-cy="Scheduled-Time">
-              <Clock4 className="w-4 h-4 text-gray-400" />
-              <span className="text-sm text-white lg:text-base">{event?.scheduledDays.length > 0 && <span className="flex items-center">{dayjs(event.scheduledDays[0]).format('hh:mm A')}</span>}</span>
+              <Clock4 className="h-4 w-4 shrink-0 text-gray-400" />
+              <span className="text-sm text-white lg:text-base">
+                {event?.scheduledDays.length > 0 && <span className="flex items-center">{dayjs(event.scheduledDays[0]).format('hh:mm A')}</span>}
+              </span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-gray-400" />
+          <div className="flex min-w-0 items-start gap-2 sm:max-w-[50%] sm:items-center">
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gray-400 sm:mt-0" />
             <span className="text-sm text-white lg:text-base" data-cy="Venue-Name">
               {event?.venue.name}
             </span>
@@ -82,7 +84,7 @@ const EventDetail = ({ event }: { event: Event }) => {
               Stage plan:
             </h1>
             <div data-cy="Stage-Plan">
-              <img src={event?.venue.image} alt="Stage" width={533} height={413} />
+              <img src={event?.venue.image} alt="Stage" className="h-auto w-full max-w-full rounded-md" width={533} height={413} />
             </div>
           </div>
         </div>
